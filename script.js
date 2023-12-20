@@ -11,6 +11,7 @@ console.log("Game of Rock Paper Scissors");
     const scissorsBtn = document.querySelector('.scissors');
     const resultDiv = document.querySelector('.resultDiv'); 
 
+    //wont let me commit
     
 
     function getComputerChoice(){
