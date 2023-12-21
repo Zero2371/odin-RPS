@@ -5,14 +5,12 @@ depending on what the choices decides who wins
 repeat this 5 times to decide winner
 */
 console.log("Game of Rock Paper Scissors");
+    
     const options = ["rock", "paper", "scissors"];
     const rockBtn = document.querySelector('.rock');
     const paperBtn = document.querySelector('.paper');
     const scissorsBtn = document.querySelector('.scissors');
     const resultDiv = document.querySelector('.resultDiv'); 
-
-    //wont let me commit
-    
 
     function getComputerChoice(){
         const choice = options[Math.floor(Math.random() * options.length)];
@@ -48,24 +46,38 @@ console.log("Game of Rock Paper Scissors");
             resultDiv.appendChild(p)
         }
     }
+     const checkForWinner = (playerScore, computerScore) => {
+        console.log('1 ', playerScore, '2', computerScore);
+        if ( playerScore === 5) {
+            const h2 = document.createElement('h2')
+            h2.classList.add('player-won')
+            h2.innerText= `You won ${playerScore} to ${computerScore}`
+            resultDiv.appendChild(h2)
+        } else if ( computerScore === 5) {
+            const h2 = document.createElement('h2')
+            h2.classList.add('computer-won')
+            h2.innerText = `You lose ${playerScore} to ${computerScore}`
+            resultDiv.appendChild(h2)
+        }
+     }
 
     rockBtn.addEventListener('click', () => {
         const computerSelection = getComputerChoice()
         const playerSelection = 'rock'
         playRound(playerSelection, computerSelection)
-
+        checkForWinner(playerScore, computerScore)
     })
     paperBtn.addEventListener('click', () => {
         const computerSelection = getComputerChoice()
         const playerSelection = 'paper'
         playRound(playerSelection, computerSelection)
-
+        checkForWinner(playerScore, computerScore)
     })
     scissorsBtn.addEventListener('click', () => {
         const computerSelection = getComputerChoice()
         const playerSelection = 'scissors'
         playRound(playerSelection, computerSelection)
-
+        checkForWinner(playerScore, computerScore)
     })
     function getPlayerChoice() {
         let validateInput = false;
@@ -81,8 +93,8 @@ console.log("Game of Rock Paper Scissors");
             }
         }
     }
-
-       /* console.log("Game Over")
+ /*
+       console.log("Game Over")
         if (scorePlayer > scoreComputer) {
             console.log("Player Wins");
         } else if(scorePlayer < scoreComputer) {
@@ -90,12 +102,12 @@ console.log("Game of Rock Paper Scissors");
         } else {
             console.log("You both lose!");
         }
-        
+        */
     
-    game()
-*/
+  // game()
 
-    /*function game() {
+        /*
+    function game() {
         let scorePlayer = 0;
         let scoreComputer = 0;
         for(let i = 0; i < 5; i++) {
@@ -110,4 +122,5 @@ console.log("Game of Rock Paper Scissors");
             }   
 
         }
-        */
+    }
+    */
