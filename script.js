@@ -12,6 +12,7 @@ console.log("Game of Rock Paper Scissors");
     const paperBtn = document.querySelector('.paper');
     const scissorsBtn = document.querySelector('.scissors');
     const resultDiv = document.querySelector('.resultDiv'); 
+    const gameResult = document.querySelector('.gameResult');
    const playerRunningScore = document.querySelector('.playerRunningScore');
    const computerRunningScore = document.querySelector('.computerRunningScore');
 
@@ -57,13 +58,13 @@ console.log("Game of Rock Paper Scissors");
             const h2 = document.createElement('h2')
             h2.classList.add('player-won')
             h2.innerText = `You won ${playerScore} to ${computerScore}`
-            resultDiv.appendChild(h2)
+            gameResult.appendChild(h2)
         } 
         if ( computerScore === 5) {
             const h2 = document.createElement('h2')
             h2.classList.add('computer-won')
             h2.innerText = `You lose ${playerScore} to ${computerScore}`
-            resultDiv.appendChild(h2)
+            gameResult.appendChild(h2)
         }
      }
     const updateScores = (playerScore, computerScore) => {
