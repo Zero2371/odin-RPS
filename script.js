@@ -5,7 +5,8 @@ depending on what the choices decides who wins
 repeat this 5 times to decide winner
 */
 console.log("Game of Rock Paper Scissors");
-    
+    let playerScore = 0;
+    let computerScore = 0;
     const options = ["rock", "paper", "scissors"];
     const rockBtn = document.querySelector('.rock');
     const paperBtn = document.querySelector('.paper');
@@ -37,23 +38,26 @@ console.log("Game of Rock Paper Scissors");
             p.innerText = `It's a Tie! You both pick ${playerSelection}`
             resultDiv.appendChild(p)
         } else if (result == "Player"){
+            playerScore++;
             const p = document.createElement('p')
             p.innerText= `You Win! ${playerSelection} beats ${computerSelection}`
             resultDiv.appendChild(p)
         } else {
+            computerScore++
             const p = document.createElement('p')
             p.innerText= `You Lose! ${computerSelection} beats ${playerSelection}`
             resultDiv.appendChild(p)
         }
     }
-     const checkForWinner = (playerScore, computerScore) => {
-        console.log('1 ', playerScore, '2', computerScore);
+     let checkForWinner =(playerSelection, computerSelection) => {
+      //  console.log('1 ', playerScore, '2 ', computerScore)
         if ( playerScore === 5) {
             const h2 = document.createElement('h2')
             h2.classList.add('player-won')
-            h2.innerText= `You won ${playerScore} to ${computerScore}`
+            h2.innerText = `You won ${playerScore} to ${computerScore}`
             resultDiv.appendChild(h2)
-        } else if ( computerScore === 5) {
+        } 
+        if ( computerScore === 5) {
             const h2 = document.createElement('h2')
             h2.classList.add('computer-won')
             h2.innerText = `You lose ${playerScore} to ${computerScore}`
@@ -65,21 +69,21 @@ console.log("Game of Rock Paper Scissors");
         const computerSelection = getComputerChoice()
         const playerSelection = 'rock'
         playRound(playerSelection, computerSelection)
-        checkForWinner(playerScore, computerScore)
+        checkForWinner(playerSelection, computerSelection)
     })
     paperBtn.addEventListener('click', () => {
         const computerSelection = getComputerChoice()
         const playerSelection = 'paper'
         playRound(playerSelection, computerSelection)
-        checkForWinner(playerScore, computerScore)
+        checkForWinner(playerSelection, computerSelection)
     })
     scissorsBtn.addEventListener('click', () => {
         const computerSelection = getComputerChoice()
         const playerSelection = 'scissors'
         playRound(playerSelection, computerSelection)
-        checkForWinner(playerScore, computerScore)
+        checkForWinner(playerSelection, computerSelection)
     })
-    function getPlayerChoice() {
+    /* function getPlayerChoice() {
         let validateInput = false;
         while(validateInput == false) {
             const choice = prompt("rock paper or scissors");
@@ -93,6 +97,7 @@ console.log("Game of Rock Paper Scissors");
             }
         }
     }
+    */
  /*
        console.log("Game Over")
         if (scorePlayer > scoreComputer) {
