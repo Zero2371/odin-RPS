@@ -12,6 +12,8 @@ console.log("Game of Rock Paper Scissors");
     const paperBtn = document.querySelector('.paper');
     const scissorsBtn = document.querySelector('.scissors');
     const resultDiv = document.querySelector('.resultDiv'); 
+   const playerRunningScore = document.querySelector('.playerRunningScore');
+   const computerRunningScore = document.querySelector('.computerRunningScore');
 
     function getComputerChoice(){
         const choice = options[Math.floor(Math.random() * options.length)];
@@ -64,23 +66,30 @@ console.log("Game of Rock Paper Scissors");
             resultDiv.appendChild(h2)
         }
      }
+    const updateScores = (playerScore, computerScore) => {
+            playerRunningScore.innerText = `${playerScore}`
+            computerRunningScore.innerText = `${computerScore}`
+     }
 
     rockBtn.addEventListener('click', () => {
         const computerSelection = getComputerChoice()
         const playerSelection = 'rock'
         playRound(playerSelection, computerSelection)
+        updateScores(playerScore, computerScore) 
         checkForWinner(playerSelection, computerSelection)
     })
     paperBtn.addEventListener('click', () => {
         const computerSelection = getComputerChoice()
         const playerSelection = 'paper'
         playRound(playerSelection, computerSelection)
+        updateScores(playerScore, computerScore)
         checkForWinner(playerSelection, computerSelection)
     })
     scissorsBtn.addEventListener('click', () => {
         const computerSelection = getComputerChoice()
         const playerSelection = 'scissors'
         playRound(playerSelection, computerSelection)
+        updateScores(playerScore, computerScore)
         checkForWinner(playerSelection, computerSelection)
     })
     /* function getPlayerChoice() {
