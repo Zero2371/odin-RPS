@@ -37,7 +37,10 @@ h1{
     margin: 0 25px;
 }
 .gameResult{
-    
+    color: rgb(245, 62, 113);
+}
+.gameResultComputer{
+    color: rgb(113, 62, 245);
 }
 .resultDiv{
  font-size: 21px;

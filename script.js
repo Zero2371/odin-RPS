@@ -59,12 +59,14 @@ console.log("Game of Rock Paper Scissors");
             h2.classList.add('player-won')
             h2.innerText = `You won ${playerScore} to ${computerScore}`
             gameResult.appendChild(h2)
+            gameOver();
         } 
         if ( computerScore === 5) {
             const h2 = document.createElement('h2')
             h2.classList.add('computer-won')
             h2.innerText = `You lose ${playerScore} to ${computerScore}`
             gameResult.appendChild(h2)
+            gameOver();
         }
      }
     const updateScores = (playerScore, computerScore) => {
@@ -93,6 +95,11 @@ console.log("Game of Rock Paper Scissors");
         updateScores(playerScore, computerScore)
         checkForWinner(playerSelection, computerSelection)
     })
+    function gameOver(){
+        let playerScore = 0;
+        let computerScore = 0;
+
+    }
     /* function getPlayerChoice() {
         let validateInput = false;
         while(validateInput == false) {
