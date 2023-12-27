@@ -22,9 +22,11 @@ h1{
 }
 .playerRunningScore{
     color: rgb(245, 62, 113);
+    filter: drop-shadow(0 0 12px red);
 }
 .computerRunningScore{
     color: rgb(113, 62, 245);
+    filter: drop-shadow(0 0 0.75rem blue);
 }
 .container{
     padding: 30px;
