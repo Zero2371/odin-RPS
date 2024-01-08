@@ -42,15 +42,13 @@ h1{
     display: flex;
     justify-content: space-between;
     gap: 50px;
+    margin-left: 314px;
 }
 .container{
     padding: 30px;
 }
 .conatiner, h2{
     text-align: center;
-}
-.gameResult{
-  
 }
 #btn{
     padding: 15px 40px;
@@ -71,9 +69,8 @@ h1{
 .resultDiv{
  font-size: 21px;
  padding: 20px 50px;
- margin-top: 50px;
  width: 150px;
- height: 400px;
+ height: 500px;
  border: 6px solid white;
  border-radius: 25px;
  overflow: auto;
