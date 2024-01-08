@@ -44,21 +44,21 @@ repeat this 5 times to decide winner
         const result = checkWinner(playerSelection, computerSelection);
         if (result == "Tie") {
             const p = document.createElement('p')
-            p.innerText = `It's a Tie! You both pick ${playerSelection}`
+            p.textContentt = `It's a Tie! You both pick ${playerSelection}`
             resultDiv.appendChild(p)
         } else if (result == "Player"){
-            playerScore++;
             const p = document.createElement('p')
-            p.innerText= `You Win! ${playerSelection} beats ${computerSelection}`
+            p.textContent= `You Win! ${playerSelection} beats ${computerSelection}`
             resultDiv.appendChild(p)
+            playerScore++;
         } else {
-            computerScore++
             const p = document.createElement('p')
-            p.innerText= `You Lose! ${computerSelection} beats ${playerSelection}`
+            p.textContent= `You Lose! ${computerSelection} beats ${playerSelection}`
+            computerScore++
             resultDiv.appendChild(p)
         }
-        document.querySelectorAll('gameResult').innerHTML = result
-    return result;
+            document.querySelectorAll('gameResult').innerHTML = result
+        return result;
 }
     
      let checkForWinner =(playerSelection, computerSelection) => {
