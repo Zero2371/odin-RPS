@@ -83,6 +83,7 @@ repeat this 5 times to decide winner
             playerRunningScore.innerText = `${playerScore}`
             computerRunningScore.innerText = `${computerScore}`
      }
+     // the button part of this worked but wasnt defined so brought back undefined
     // buttons.forEach(button =>{
     //    button.addEventListener('click', function(){
     //        playRound(button.value)
