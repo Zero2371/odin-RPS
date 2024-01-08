@@ -34,6 +34,7 @@ repeat this 5 times to decide winner
             return "Computer";
         }
     }
+   
     function disableButtons() {
         buttons.forEach(btn=> {
             btn.disabled = true
@@ -56,7 +57,6 @@ repeat this 5 times to decide winner
             p.innerText= `You Lose! ${computerSelection} beats ${playerSelection}`
             resultDiv.appendChild(p)
         }
-
         document.querySelectorAll('gameResult').innerHTML = result
     return result;
 }
@@ -83,11 +83,11 @@ repeat this 5 times to decide winner
             playerRunningScore.innerText = `${playerScore}`
             computerRunningScore.innerText = `${computerScore}`
      }
-     buttons.forEach(button =>{
-        button.addEventListener('click', function(){
-            playRound(button.value)
-        })
-    })
+    // buttons.forEach(button =>{
+    //    button.addEventListener('click', function(){
+    //        playRound(button.value)
+    //    })
+    //})
     rockBtn.addEventListener('click', () => {
         const computerSelection = getComputerChoice()
         const playerSelection = 'rock'
