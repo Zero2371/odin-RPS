@@ -4,9 +4,10 @@ after user chooses, computer will choose a random answer of listed of above
 depending on what the choices decides who wins
 repeat this 5 times to decide winner
 */
-console.log("Game of Rock Paper Scissors");
+// console.log("Game of Rock Paper Scissors");
     let playerScore = 0;
     let computerScore = 0;
+    const buttons = document.querySelectorAll('button')
     const options = ["rock", "paper", "scissors"];
     const rockBtn = document.querySelector('.rock');
     const paperBtn = document.querySelector('.paper');
@@ -33,7 +34,11 @@ console.log("Game of Rock Paper Scissors");
             return "Computer";
         }
     }
-
+    function disableButtons() {
+        buttons.forEach(btn=> {
+            btn.disabled = true
+        });
+    }
     function playRound(playerSelection, computerSelection) {
         const result = checkWinner(playerSelection, computerSelection);
         if (result == "Tie") {
@@ -51,29 +56,38 @@ console.log("Game of Rock Paper Scissors");
             p.innerText= `You Lose! ${computerSelection} beats ${playerSelection}`
             resultDiv.appendChild(p)
         }
-    }
+
+        document.querySelectorAll('gameResult').innerHTML = result
+    return result;
+}
+    
      let checkForWinner =(playerSelection, computerSelection) => {
       //  console.log('1 ', playerScore, '2 ', computerScore)
         if ( playerScore === 5) {
             const h2 = document.createElement('h2')
             h2.classList.add('player-won')
             h2.innerText = `You won ${playerScore} to ${computerScore}`
+            disableButtons();
             gameResult.appendChild(h2)
-            gameOver();
+            
         } 
         if ( computerScore === 5) {
             const h2 = document.createElement('h2')
             h2.classList.add('computer-won')
             h2.innerText = `You lose ${playerScore} to ${computerScore}`
+            disableButtons();
             gameResult.appendChild(h2)
-            gameOver();
         }
      }
     const updateScores = (playerScore, computerScore) => {
             playerRunningScore.innerText = `${playerScore}`
             computerRunningScore.innerText = `${computerScore}`
      }
-
+     buttons.forEach(button =>{
+        button.addEventListener('click', function(){
+            playRound(button.value)
+        })
+    })
     rockBtn.addEventListener('click', () => {
         const computerSelection = getComputerChoice()
         const playerSelection = 'rock'
@@ -95,11 +109,12 @@ console.log("Game of Rock Paper Scissors");
         updateScores(playerScore, computerScore)
         checkForWinner(playerSelection, computerSelection)
     })
-    function gameOver(){
-        let playerScore = 0;
-        let computerScore = 0;
+    
 
-    }
+
+
+
+    //console only
     /* function getPlayerChoice() {
         let validateInput = false;
         while(validateInput == false) {
